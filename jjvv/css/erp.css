@@ -1,0 +1,369 @@
+*{
+  margin-left: .1em;
+  font-family: 'Alfa Slab One', sans-serif; 
+}
+.c-header{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: auto;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 0;
+}
+.h1{
+  width: 11em;
+  height: 2em;
+  margin-left: 0em;
+  margin-top: 0em;
+}
+.h2{
+  background-color: transparent;
+  color: rgb(0, 0, 255);
+  text-align: left;
+  font-family: verdana;
+}
+.h3{
+  text-align: left;
+  font-family: 'Alfa Slab One', sans-serif;
+}
+.combobox{
+  display: inline-block;
+  position: relative;
+}
+.combobox select{
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  appearance: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 255);
+}
+.combobox select:focus{
+  outline: none;
+  box-shadow: 0 0 5px rgb(0, 0, 255);
+}
+.combobox::after{
+  content: "";
+  font-size: 12px; 
+  color: rgb(0, 0, 255);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.combobox button{
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 255);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.combobox button:hover{
+  background-color: #0b7dda;
+}
+.body {
+  width: 70em;
+  margin: auto;
+  border: rgb(0, 0, 255);  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  box-sizing: border-box; 
+}
+.amazon-link{
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+}
+.imagenes{
+  display: flex;
+  width: 60em;
+  height: 20em;
+}
+.imagenes img{
+  width: 0em;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .7;
+  transition: .5s ease;
+}
+.imagenes img:hover {
+  width: 30em;
+  opacity: 1;
+  filter: contrast(120%);
+}
+/* movimiento hacia la derecha y luego abajo */
+.article{
+  width: 15em;
+  height: 1em;
+  animation: mover-derecha 30s ease-in-out;
+  animation-delay: 1000ms;
+  animation-iteration-count: infinite;
+  font-size: .9em;
+  color: rgb(0, 0, 255);
+  background: transparent;
+}
+@keyframes mover-derecha {
+  0% {
+    transform: translateX(1em);
+  }
+  50% {
+    transform: translateX(8em);
+  }    /* background: linear-gradient(120deg, black, lime); */
+  100% {
+    transform: translateX(-7em) translateX(8em);
+  }   /*  background: linear-gradient(180deg, black, lime); */
+}
+/* div class="cuadroindex"  */
+.cuadroindex {
+  background: rgb(255, 255, 255);
+  opacity: 0.95;
+}
+/* .col-4{
+  column-count: 3;
+} */
+/* iconos con animacion agrandar y disminuir el tamaño */
+.iconos {
+  width: 2em;
+  animation-name: animar;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-delay: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  background: transparent;
+}
+@keyframes animar {
+  0% {
+    transform: scale(0.3);
+  }
+}
+.strong {
+  background: transparent; 
+  color: rgb(0, 0, 255);
+  text-emphasis: bold;
+}
+/* span de boton cabecera.php */
+.txt-secundario {
+  visibility: hidden;
+  width: 26em;
+  position: absolute;
+  background: rgb(0, 0, 255);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 0;
+  top: 55px;
+  left: 80%;
+  margin-left: -60px;
+  z-index: 1;
+}
+/* NO FUNCIONA ESTE CODIGO, el hover en los links no se ven por el fondo y letra azul: 
+.p-index a{
+  background-color: transparent;
+}*/
+/* .p-index:hover {
+  background-color: none;
+}  */
+/* Botones de la cabecera.php */
+.botones{
+  display: inline-block;
+  border: 3px solid rgb(0, 0, 255);
+  padding: 12px;
+  border-radius: 10px;
+  color: rgb(0, 0, 255);
+  font-size: 1em;
+  position: relative;
+}
+.botones:hover{
+  background: radial-gradient(circle, rgb(0, 0, 255) 5%, rgb(135, 206, 250));
+  text-shadow: rgb(0, 0, 255) 2px -2px 5px;
+  color: rgb(255, 255, 255);
+  transform: scale(1.5);
+  z-index: 1;
+}
+@keyframes skew{
+  0% {
+    transform: skew(10deg, 10deg);
+  }
+  100% {
+    transform: skew(-10deg, -10deg);
+  }
+}
+.botones:hover .txt-secundario{
+  visibility: visible;
+}
+.botones .txt-secundario::after{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 10%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgb(0, 0, 255);
+}
+.li{
+  display: inline-block;
+  padding: 12px;
+}
+.hr{
+  background: rgb(0, 0, 255);
+  height: .2em;
+}
+.acronimos{
+  background: rgb(255, 255, 255);
+}
+#subtitulo1{
+  font-size: 1.5em;
+}
+/* LOGIN */
+.main_login{
+    background-image: url(../../imagenes/fondo-erp.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 30em;
+    padding: 0;
+    margin: auto;
+    z-index: -1;
+  }
+  .contenedor_todo{
+    margin-top: 3em;
+    width: 100%;
+    max-width: 70em;
+    margin: auto;
+    position: relative;
+  }
+  .caja_trasera{
+    position: absolute;
+    margin-top: 5em;
+    width: 100%;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 255, 0.4);
+  } 
+  .caja_trasera div{
+    margin: 2em 4em;
+    color: #fff;
+    transition: all 500ms;
+  }
+  .caja_trasera div p,
+  .caja_trasera div button{
+    margin-top: 1em;
+  }
+  .caja_trasera div h3{
+    font-weight: 400;
+    font-size: 1.5em;
+  }
+  .caja_trasera button{
+    padding: 1em 4em;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    transition: all 300ms;
+    border-radius: 10px;
+  }
+  .caja_trasera button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 255);
+  }
+  /* FORMULARIOS */
+  .contenedor_login_registrar{
+    /* visibility: hidden; */  
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    top: 3em;
+    left: 1em;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  }
+  .contenedor_login_registrar form{
+    top: -1em;
+    width: 80%;
+    padding: 5em 0.6em;
+    background: #fff;
+    position: absolute;
+    border-radius: 20px;  
+  }
+  .contenedor_login_registrar form h3{
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: -1em;
+    margin-bottom: 0.1em;
+    color: rgb(0, 0, 255);
+  }
+  .contenedor_login_registrar form input{
+    width: 85%;
+    margin-top: 0.3em;
+    padding: 1em;
+    border: none;
+    background: rgb(228, 228, 228);
+    font-size: 1em;
+    outline: none;
+    border-radius: 10px;
+  }
+  .contenedor_login_registrar form button{
+    width: 93%;
+    padding: 10px 40px;
+    margin-top: 20px;
+    border: none;
+    font-size: 1.2em;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+  }
+  .formulario_login{
+    opacity: 1;
+    display: block;
+  }
+  .formulario_registrar{
+    display: none;  
+  }
+  /* TRABAJANDO EN EL RESPONSIVE DESIGN */
+  @media screen and (max-width: 98%){
+    .main_login{
+      margin-top: 50px;
+    }
+    .caja_trasera{
+      max-width: 50%;
+      height: 50%;
+      flex-direction: column;
+      margin: auto;
+    }
+    .caja_trasera div{
+      margin: 0%;
+      position: absolute;
+    }
+    /* FORMULARIOS */
+    .contenedor_login_registrar{
+      top: -1em;
+      left: -0.5em;
+      margin: auto;
+    }
+    .contenedor_login_registrar form{
+      position: relative;
+    }
+  }
